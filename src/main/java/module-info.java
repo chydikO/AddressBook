@@ -13,4 +13,6 @@ module com.chudik0.addressbook {
 
     opens com.chudik0.addressbook to javafx.fxml;
     exports com.chudik0.addressbook;
+    exports com.chudik0.addressbook.controllers;
+
 }
