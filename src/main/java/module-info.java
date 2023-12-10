@@ -12,6 +12,7 @@ module com.chudik0.addressbook {
     requires com.almasb.fxgl.all;
 
     opens com.chudik0.addressbook to javafx.fxml;
+    opens com.chudik0.addressbook.objects to javafx.base;
     exports com.chudik0.addressbook;
     exports com.chudik0.addressbook.controllers;
 

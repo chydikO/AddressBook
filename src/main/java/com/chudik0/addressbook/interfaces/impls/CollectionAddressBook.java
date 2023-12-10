@@ -2,12 +2,13 @@ package com.chudik0.addressbook.interfaces.impls;
 
 import com.chudik0.addressbook.interfaces.AddressBook;
 import com.chudik0.addressbook.objects.Person;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class CollectionAddressBook implements AddressBook {
-    private ArrayList<Person> personArrayList = new ArrayList<>();
+    private final ObservableList<Person> personArrayList = FXCollections.observableArrayList();
 
     @Override
     public void addPerson(Person person) {
@@ -24,7 +25,7 @@ public class CollectionAddressBook implements AddressBook {
         personArrayList.remove(person);
     }
 
-    public ArrayList<Person> getPersonArrayList() {
+    public ObservableList<Person> getPersonArrayList() {
         return personArrayList;
     }
 
