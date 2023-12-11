@@ -3,6 +3,8 @@ package com.chudik0.addressbook.controllers;
 import com.chudik0.addressbook.Main;
 import com.chudik0.addressbook.interfaces.impls.CollectionAddressBook;
 import com.chudik0.addressbook.objects.Person;
+import javafx.beans.value.ChangeListener;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,8 +42,13 @@ public class MainController {
 
     @FXML
     public void initialize() {
+        addressBookImpl.getPersonArrayList().addListener(new ListChangeListener<Person>() {
+            @Override
+            public void onChanged(Change<? extends Person> c) {
+                updateCountLabel();
+            }
+        });
         addressBookImpl.fillTestData();
-        updateCountLabel();
 
         columnFio.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
         columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
@@ -54,7 +61,7 @@ public class MainController {
 
     public void showDialog(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("edit-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("fxml/edit-view.fxml")));
         stage.setTitle("Edit Record");
         stage.setMinHeight(150);
         stage.setMinWidth(300);
