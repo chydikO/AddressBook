@@ -42,6 +42,8 @@ public class MainController {
 
     @FXML
     public void initialize() {
+        tableViewAddressBook.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
         addressBookImpl.getPersonArrayList().addListener(new ListChangeListener<Person>() {
             @Override
             public void onChanged(Change<? extends Person> c) {
@@ -60,15 +62,31 @@ public class MainController {
     }
 
     public void showDialog(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("fxml/edit-view.fxml")));
-        stage.setTitle("Edit Record");
-        stage.setMinHeight(150);
-        stage.setMinWidth(300);
-        stage.setResizable(false);
-        stage.setScene(new Scene(root));
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
-        stage.show();
+        Object source = actionEvent.getSource();
+        if (!(source instanceof Button)) {
+            return;
+        }
+        Button clickedButton = (Button) source;
+        Person selectedPerson = (Person) tableViewAddressBook.getSelectionModel().getSelectedItem();
+        switch (clickedButton.getId()) {
+            case "addButton" -> System.out.println("add -> " + selectedPerson);
+            case "editButton" -> System.out.println("edit -> " + selectedPerson);
+            case "deleteButton" -> System.out.println("delete -> " + selectedPerson);
+        }
+
+        try {
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("fxml/edit-view.fxml")));
+            stage.setTitle("Edit Record");
+            stage.setMinHeight(150);
+            stage.setMinWidth(300);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
 }

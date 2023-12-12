@@ -4,129 +4,50 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox
-        alignment="CENTER"
-        maxHeight="-Infinity"
-        maxWidth="-Infinity"
-        minHeight="600.0"
-        minWidth="400.0"
-        xmlns="http://javafx.com/javafx/17.0.2-ea"
-        xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.chudik0.addressbook.controllers.MainController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chudik0.addressbook.controllers.MainController">
 
-    <HBox
-            maxHeight="50.0"
-            prefHeight="100.0">
-        <Button
-                mnemonicParsing="false"
-                onAction="#showDialog"
-                text="Add"
-                fx:id="addButton">
+    <HBox maxHeight="50.0" prefHeight="100.0">
+        <Button fx:id="addButton" mnemonicParsing="false" onAction="#showDialog" text="Add">
             <HBox.margin>
-                <Insets
-                        bottom="20.0"
-                        left="20.0"
-                        right="20.0"
-                        top="20.0"/>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </HBox.margin>
         </Button>
-        <Button
-                mnemonicParsing="false"
-                text="Edit"
-                fx:id="editButton">
+        <Button fx:id="editButton" mnemonicParsing="false" onAction="#showDialog" text="Edit">
             <HBox.margin>
-                <Insets
-                        bottom="20.0"
-                        left="20.0"
-                        right="20.0"
-                        top="20.0"/>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </HBox.margin>
         </Button>
-        <Button
-                mnemonicParsing="false"
-                text="Delete"
-                fx:id="deleteButton">
+        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#showDialog" text="Delete">
             <HBox.margin>
-                <Insets
-                        bottom="20.0"
-                        left="20.0"
-                        right="20.0"
-                        top="20.0"/>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </HBox.margin>
         </Button>
     </HBox>
-    <AnchorPane
-            maxHeight="30.0"
-            prefHeight="100.0">
+    <AnchorPane maxHeight="30.0" prefHeight="100.0">
         <VBox.margin>
-            <Insets
-                    bottom="20.0"
-                    left="20.0"
-                    right="20.0"
-                    top="20.0"/>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </VBox.margin>
-        <TextField
-                prefHeight="31.0"
-                prefWidth="293.0"
-                AnchorPane.leftAnchor="0.0"
-                AnchorPane.rightAnchor="80.0"
-                fx:id="textField"/>
-        <Button
-                layoutX="266.0"
-                mnemonicParsing="false"
-                text="Search"
-                AnchorPane.rightAnchor="0.0"
-                fx:id="searchButton"/>
+        <TextField fx:id="textField" prefHeight="31.0" prefWidth="293.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="80.0" />
+        <Button fx:id="searchButton" layoutX="266.0" mnemonicParsing="false" text="Search" AnchorPane.rightAnchor="0.0" />
     </AnchorPane>
-    <AnchorPane
-            prefHeight="100.0"
-            prefWidth="200.0"
-            VBox.vgrow="ALWAYS">
+    <AnchorPane prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <VBox.margin>
-            <Insets
-                    bottom="20.0"
-                    left="20.0"
-                    right="20.0"
-                    top="20.0"/>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </VBox.margin>
-        <TableView
-                prefHeight="400.0"
-                prefWidth="357.0"
-                AnchorPane.bottomAnchor="0.0"
-                AnchorPane.leftAnchor="0.0"
-                AnchorPane.rightAnchor="0.0"
-                AnchorPane.topAnchor="0.0"
-                fx:id="tableViewAddressBook">
+        <TableView fx:id="tableViewAddressBook" prefHeight="400.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columns>
-                <TableColumn
-                        minWidth="100.0"
-                        text="Name"
-                        fx:id="columnFio"/>
-                <TableColumn
-                        minWidth="100.0"
-                        prefWidth="-1.0"
-                        text="Phone"
-                        fx:id="columnPhone"/>
+                <TableColumn fx:id="columnFio" minWidth="100.0" text="Name" />
+                <TableColumn fx:id="columnPhone" minWidth="100.0" prefWidth="-1.0" text="Phone" />
             </columns>
             <columnResizePolicy>
-                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
     </AnchorPane>
-    <AnchorPane
-            prefHeight="30.0"
-            prefWidth="200.0">
+    <AnchorPane prefHeight="30.0" prefWidth="200.0">
         <VBox.margin>
-            <Insets
-                    bottom="20.0"
-                    left="20.0"
-                    right="20.0"
-                    top="20.0"/>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </VBox.margin>
-        <Label
-                text="Counter records:"
-                AnchorPane.bottomAnchor="0.0"
-                AnchorPane.leftAnchor="0.0"
-                fx:id="labelCount"/>
+        <Label fx:id="labelCount" text="Counter records:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
     </AnchorPane>
 </VBox>

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chudik0.addressbook.controllers.EditDialogController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chudik0.addressbook.controllers.EditDialogController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -47,12 +44,12 @@
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
-         <Button fx:id="okButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" text="ОК">
+         <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" text="ОК">
             <VBox.margin>
                <Insets bottom="5.0" left="25.0" right="5.0" top="5.0" />
             </VBox.margin>
          </Button>
-         <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" text="Cancel">
+         <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#actionClose" prefHeight="31.0" prefWidth="100.0" text="Cancel">
             <VBox.margin>
                <Insets bottom="5.0" left="25.0" right="5.0" top="5.0" />
             </VBox.margin>

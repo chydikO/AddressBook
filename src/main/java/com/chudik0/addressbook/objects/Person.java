@@ -35,4 +35,12 @@ public class Person {
     public StringProperty phoneProperty() {
         return phone;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fio=" + fio +
+                ", phone=" + phone +
+                '}';
+    }
 }
