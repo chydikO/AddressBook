@@ -4,8 +4,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Person {
-    private final StringProperty fio;
-    private final StringProperty phone;
+    private SimpleStringProperty fio = new SimpleStringProperty("");
+    private SimpleStringProperty phone = new SimpleStringProperty("");
+
+    public Person() {
+
+    }
 
     public Person(String fio, String phone) {
         this.fio = new SimpleStringProperty(fio);
@@ -28,16 +32,16 @@ public class Person {
         this.phone.set(phone);
     }
 
-    public StringProperty fioProperty() {
+    public SimpleStringProperty fioProperty() {
         return fio;
     }
 
-    public StringProperty phoneProperty() {
+    public SimpleStringProperty phoneProperty() {
         return phone;
     }
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "Person{" +
                 "fio=" + fio +
                 ", phone=" + phone +
